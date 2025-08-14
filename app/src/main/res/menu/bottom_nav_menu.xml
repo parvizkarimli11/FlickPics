@@ -2,28 +2,23 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/homeFragment"
-        android:title="Home"
+        android:id="@+id/mainFragment"
         android:icon="@drawable/icons_home"
-        />
-    <item
+        android:title="Home" />
 
+    <item
         android:id="@+id/favoritesFragment"
-        android:title="Favorites"
         android:icon="@drawable/favorite_svg"
-        />
-    <item
+        android:title="Favorites" />
 
-       android:id="@+id/searchFragment"
-        android:title="Search"
+    <item
+        android:id="@+id/searchFragment"
         android:icon="@drawable/search_normal"
-        />
+        android:title="Search" />
+
     <item
-
         android:id="@+id/profileFragment"
-        android:title="Profile"
         android:icon="@drawable/user"
-
-        />
+        android:title="Profile" />
 
 </menu>
