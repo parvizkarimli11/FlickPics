@@ -26,6 +26,7 @@ class MainFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
         val movieList = listOf(
             RecomendedDT(
                 imageResId = R.drawable.movie,
