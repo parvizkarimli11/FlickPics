@@ -1,4 +1,4 @@
-package com.example.flickipics
+package com.example.flickipics.ui.fragments.home
 
 data class RecomendedDTO(
 

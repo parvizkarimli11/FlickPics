@@ -1,21 +1,22 @@
-package com.example.flickipics
+package com.example.flickipics.ui.fragments.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.example.flickipics.R
 import com.example.flickipics.databinding.ItemRecomendedBinding
 
 class RecomendedAdapter(private val items: List<RecomendedDTO>) :
     RecyclerView.Adapter<RecomendedAdapter.RecomendedViewHolder>() {
 
     inner class RecomendedViewHolder(val binding: ItemRecomendedBinding) :
-        RecyclerView.ViewHolder(binding.root)
+        ViewHolder(binding.root)
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): RecomendedAdapter.RecomendedViewHolder {
+    ): RecomendedViewHolder {
         var binding =
             ItemRecomendedBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return RecomendedViewHolder(binding)

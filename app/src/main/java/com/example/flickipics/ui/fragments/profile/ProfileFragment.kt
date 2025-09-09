@@ -1,11 +1,11 @@
-package com.example.flickipics
+package com.example.flickipics.ui.fragments.profile
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
+import androidx.fragment.app.Fragment
+import com.example.flickipics.R
 
 class ProfileFragment : Fragment() {
 

@@ -1,10 +1,8 @@
-package com.example.flickipics
+package com.example.flickipics.ui.fragments.home
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.flickipics.databinding.FragmentMainBinding
 import com.example.flickipics.databinding.ItemTopSearchBinding
 
 class TopSearchAdapter(private val items:List<TopSearchDTO>)

@@ -1,4 +1,4 @@
-package com.example.flickipics
+package com.example.flickipics.ui.fragments.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.flickipics.R
 import com.example.flickipics.databinding.FragmentTopSearchBinding
 
 

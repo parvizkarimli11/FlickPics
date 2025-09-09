@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.flickipics.MainFragment"
+        android:name="com.example.flickipics.ui.fragments.home.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" >
+        tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_recomendedFragment"
             app:destination="@id/recomendedFragment" />
@@ -17,14 +17,30 @@
             android:id="@+id/action_mainFragment_to_topSearchFragment"
             app:destination="@id/topSearchFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/recomendedFragment"
-        android:name="com.example.flickipics.RecomendedFragment"
+        android:name="com.example.flickipics.ui.fragments.home.RecomendedFragment"
         android:label="fragment_recomended"
         tools:layout="@layout/fragment_recomended" />
+
     <fragment
         android:id="@+id/topSearchFragment"
-        android:name="com.example.flickipics.TopSearchFragment"
+        android:name="com.example.flickipics.ui.fragments.home.TopSearchFragment"
         android:label="fragment_top_search"
         tools:layout="@layout/fragment_top_search" />
+
+    <fragment
+        android:id="@+id/favoritesFragment2"
+        android:name="com.example.flickipics.ui.fragments.fav.FavoritesFragment"
+        android:label="fragment_favorites"
+        tools:layout="@layout/fragment_favorites" />
+
+    <fragment
+        android:id="@+id/searchFragment2"
+        android:name="com.example.flickipics.ui.fragments.search.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
+
+
 </navigation>

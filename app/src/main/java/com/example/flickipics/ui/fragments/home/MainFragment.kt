@@ -1,4 +1,4 @@
-package com.example.flickipics
+package com.example.flickipics.ui.fragments.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,30 +7,36 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.flickipics.R
 import com.example.flickipics.databinding.FragmentMainBinding
-import com.example.flickipics.databinding.FragmentRecomendedBinding
 
 
-class RecomendedFragment : Fragment() {
+class MainFragment : Fragment() {
 
-    var binding: FragmentRecomendedBinding? = null
+    var binding: FragmentMainBinding? = null
     var recomendedAdapter: RecomendedAdapter? = null
-
+    var seeAllTextView:TextView?=null
+    var seaAllTextView1:TextView?=null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        binding = FragmentRecomendedBinding.inflate(inflater, container, false)
+        binding = FragmentMainBinding.inflate(inflater, container, false)
         return binding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
+        seeAllTextView=binding?.texViewSeaAll
 
+        seeAllTextView?.setOnClickListener {
+
+            findNavController().navigate(R.id.action_mainFragment_to_recomendedFragment)
+
+        }
 
 
         val movieList = listOf(
@@ -58,39 +64,29 @@ class RecomendedFragment : Fragment() {
                 imageResId = R.drawable.movie,
                 title = "The Greatest Showman",
                 genre = "Drama"
-
-            ),RecomendedDTO(
-                imageResId = R.drawable.movie,
-                title = "The Greatest Showman",
-                genre = "Drama"
-
-            ),RecomendedDTO(
-                imageResId = R.drawable.movie,
-                title = "The Greatest Showman",
-                genre = "Drama"
-
-            ),RecomendedDTO(
-                imageResId = R.drawable.movie,
-                title = "The Greatest Showman",
-                genre = "Drama"
-            ),RecomendedDTO(
-                imageResId = R.drawable.movie,
-                title = "The Greatest Showman",
-                genre = "Drama"
             )
-
 
         )
 
         recomendedAdapter = RecomendedAdapter(movieList)
-
-        binding?.recyclerView?.layoutManager = GridLayoutManager(
+        binding?.recyclerView?.layoutManager = LinearLayoutManager(
             requireContext(),
-             3
+            LinearLayoutManager.HORIZONTAL,
+            false
         )
         binding?.recyclerView?.adapter = recomendedAdapter
+
+
+        seaAllTextView1=binding?.textViewSeaAll1
+
+        seaAllTextView1?.setOnClickListener {
+
+            findNavController().navigate(R.id.action_mainFragment_to_topSearchFragment)
+
+        }
     }
 
 
 
-    }
+
+}
