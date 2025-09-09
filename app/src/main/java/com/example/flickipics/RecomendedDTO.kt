@@ -1,9 +1,9 @@
 package com.example.flickipics
 
-data class RecomendedDT(
+data class RecomendedDTO(
 
     var title: String,
     var imageResId:Int,
-    var country:String
+    var genre:String
 
 )

@@ -6,12 +6,11 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.flickipics.databinding.ItemRecomendedBinding
 
-class RecomendedAdapter(private val items: List<RecomendedDT>) :
+class RecomendedAdapter(private val items: List<RecomendedDTO>) :
     RecyclerView.Adapter<RecomendedAdapter.RecomendedViewHolder>() {
 
     inner class RecomendedViewHolder(val binding: ItemRecomendedBinding) :
-        RecyclerView.ViewHolder(binding.root) {
-    }
+        RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -26,7 +25,7 @@ class RecomendedAdapter(private val items: List<RecomendedDT>) :
         var item = items[position]
         holder.binding.imagePoster.setImageResource(R.drawable.movie)
         holder.binding.textTitle.text = item.title
-        holder.binding.textCountry.text = item.country
+        holder.binding.textGenre.text = item.genre
     }
 
     override fun getItemCount(): Int {

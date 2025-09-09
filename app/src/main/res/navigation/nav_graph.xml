@@ -9,5 +9,22 @@
         android:id="@+id/mainFragment"
         android:name="com.example.flickipics.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_recomendedFragment"
+            app:destination="@id/recomendedFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_topSearchFragment"
+            app:destination="@id/topSearchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recomendedFragment"
+        android:name="com.example.flickipics.RecomendedFragment"
+        android:label="fragment_recomended"
+        tools:layout="@layout/fragment_recomended" />
+    <fragment
+        android:id="@+id/topSearchFragment"
+        android:name="com.example.flickipics.TopSearchFragment"
+        android:label="fragment_top_search"
+        tools:layout="@layout/fragment_top_search" />
 </navigation>

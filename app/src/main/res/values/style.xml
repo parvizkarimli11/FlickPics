@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="BoldText">
+
+        <item name="android:fontFamily">@font/robotomono_bold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#02050F</item>
+
+    </style>
+
+    <style name="MediumText">
+
+        <item name="android:fontFamily">@font/robotomono_medium</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#685CF0</item>
+
+    </style>
+
+
+</resources>

@@ -4,18 +4,112 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="25dp"
+    android:layout_margin="12dp"
     tools:context=".MainFragment">
+
+    <TextView
+        android:id="@+id/textWiewRecomended"
+        style="@style/BoldText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:ellipsize="none"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="@string/recomended"
+        app:layout_constraintEnd_toStartOf="@id/texViewSeaAll"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/texViewSeaAll"
+        style="@style/MediumText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:ellipsize="none"
+        android:singleLine="true"
+        android:text="@string/sea_all"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textWiewRecomended"
+        app:layout_constraintTop_toTopOf="@id/textWiewRecomended" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:clipToPadding="false"
-        android:padding="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/textWiewRecomended" />
+
+    <TextView
+        android:id="@+id/textViewTopSearch"
+        style="@style/BoldText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:ellipsize="none"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="Top Searches"
+        app:layout_constraintEnd_toStartOf="@id/textViewSeaAll1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recyclerView" />
+
+    <TextView
+        android:id="@+id/textViewSeaAll1"
+        style="@style/MediumText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="8dp"
+        android:ellipsize="none"
+        android:singleLine="true"
+        android:text="@string/sea_all"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textViewTopSearch"
+        app:layout_constraintTop_toTopOf="@id/textViewTopSearch" />
+
+    <ImageView
+        android:id="@+id/imageViewMovie"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="18dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/movie1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewTopSearch" />
+
+    <TextView
+        android:id="@+id/textViewMovieTitle"
+        style="@style/BoldText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="Bridgerton"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/textViewMovieGenre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageViewMovie"
+        app:layout_constraintTop_toTopOf="@id/imageViewMovie" />
+
+    <TextView
+        android:id="@+id/textViewMovieGenre"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Drama"
+        android:textColor="#666"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewMovie"
+        app:layout_constraintEnd_toEndOf="@id/textViewMovieTitle"
+        app:layout_constraintStart_toStartOf="@id/textViewMovieTitle"
+        app:layout_constraintTop_toBottomOf="@id/textViewMovieTitle" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
