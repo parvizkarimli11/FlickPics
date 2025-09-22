@@ -42,29 +42,10 @@ class MainFragment : Fragment() {
 
         }
 
-
-//        val movieList = listOf(
-//            RecomendedDTO(
-//                imageResId = R.drawable.movie, title = "The Greatest Showman", genre = "Drama"
-//            ), RecomendedDTO(
-//                imageResId = R.drawable.movie, title = "The Greatest Showman", genre = "Drama"
-//            ), RecomendedDTO(
-//                imageResId = R.drawable.movie, title = "The Greatest Showman", genre = "Drama"
-//            ), RecomendedDTO(
-//                imageResId = R.drawable.movie, title = "The Greatest Showman", genre = "Drama"
-//            ), RecomendedDTO(
-//                imageResId = R.drawable.movie, title = "The Greatest Showman", genre = "Drama"
-//            )
-//
-//        )
-
-
         seaAllTextView1 = binding?.textViewSeaAll1
 
         seaAllTextView1?.setOnClickListener {
-
             findNavController().navigate(R.id.action_mainFragment_to_topSearchFragment)
-
         }
 
         NetworkUtil.usersApi.fetchMovieList().enqueue(object : Callback<MovieListResponse> {
@@ -90,12 +71,22 @@ class MainFragment : Fragment() {
     private fun handleResponse(body: MovieListResponse) {
         val newMovieList = mutableListOf<RecomendedDTO>()
         body.docs?.forEach { movie ->
+
+            val stringBuilder = StringBuilder()
+            movie.genres?.forEach {
+                stringBuilder.append(it.name).append(" ")
+            }
+
             newMovieList.add(
                 RecomendedDTO(
-                    title = movie.name ?: "Test", genre = "", imageResId = R.drawable.movie
+                    title = movie.name ?: "Test",
+                    genre = stringBuilder.toString(),
+                    imageResId = R.drawable.movie,
+                    imageUrl = movie.poster?.previewUrl
                 )
             )
         }
+
         recomendedAdapter = RecomendedAdapter(newMovieList)
         binding?.recyclerView?.layoutManager = LinearLayoutManager(
             requireContext(), LinearLayoutManager.HORIZONTAL, false

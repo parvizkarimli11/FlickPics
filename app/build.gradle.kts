@@ -60,6 +60,7 @@ dependencies {
     implementation(libs.okhttp.logging)
     ksp(libs.moshi.ksp)
     implementation(libs.moshi)
+    implementation(libs.picasso)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

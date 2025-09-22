@@ -13,7 +13,7 @@ data class MovieResponse(
     @Json(name = "id") val id: Int? = null,
     @Json(name = "name") val name: String? = null,
     @Json(name = "poster") val poster: MoviePosterResponse? = null,
-    @Json(name = "genres") val genres: List<MoviePosterResponse>? = null
+    @Json(name = "genres") val genres: List<MovieGenresResponse>? = null
 )
 
 @JsonClass(generateAdapter = true)

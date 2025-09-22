@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.flickipics.R
 import com.example.flickipics.databinding.ItemRecomendedBinding
+import com.squareup.picasso.Picasso
 
 class RecomendedAdapter(private val items: List<RecomendedDTO>) :
     RecyclerView.Adapter<RecomendedAdapter.RecomendedViewHolder>() {
@@ -23,10 +24,15 @@ class RecomendedAdapter(private val items: List<RecomendedDTO>) :
     }
 
     override fun onBindViewHolder(holder: RecomendedViewHolder, position: Int) {
-        var item = items[position]
-        holder.binding.imagePoster.setImageResource(R.drawable.movie)
+        val item = items[position]
         holder.binding.textTitle.text = item.title
         holder.binding.textGenre.text = item.genre
+
+        item.imageUrl?.let { imageUrl ->
+            Picasso.get()
+                .load(imageUrl)
+                .into(holder.binding.imagePoster)
+        }
     }
 
     override fun getItemCount(): Int {
