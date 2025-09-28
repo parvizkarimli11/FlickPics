@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginEnd="10dp">
@@ -23,10 +24,10 @@
         android:layout_marginTop="6dp"
         android:textSize="16sp"
         android:textStyle="bold"
-        tools:text="title title title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imagePoster" />
+        app:layout_constraintTop_toBottomOf="@id/imagePoster"
+        tools:text="title title title" />
 
     <TextView
         android:id="@+id/textGenre"

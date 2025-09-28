@@ -1,0 +1,213 @@
+{
+  "docs": [
+    {
+      "id": 298,
+      "name": "Люди Икс 2",
+      "poster": {
+        "url": "https://image.openmoviedb.com/kinopoisk-images/1600647/417ac3c9-16ad-4b0d-bdd8-33f6fef9fa85/600x900",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1600647/417ac3c9-16ad-4b0d-bdd8-33f6fef9fa85/300x450"
+      },
+      "genres": [
+        {
+          "name": "фантастика"
+        },
+        {
+          "name": "боевик"
+        },
+        {
+          "name": "триллер"
+        }
+      ],
+      "enName": null,
+      "logo": {
+        "url": "https://avatars.mds.yandex.net/get-ott/224348/2a000001725500479eef3fe6aea6eac5368c/orig"
+      }
+    },
+    {
+      "id": 299,
+      "name": "Матрица: Перезагрузка",
+      "poster": {
+        "url": "https://image.openmoviedb.com/kinopoisk-images/4774061/a53d1c75-4d1a-4c86-a936-65b2a724345c/600x900",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/4774061/a53d1c75-4d1a-4c86-a936-65b2a724345c/300x450"
+      },
+      "genres": [
+        {
+          "name": "фантастика"
+        },
+        {
+          "name": "боевик"
+        }
+      ],
+      "enName": null,
+      "logo": {
+        "url": "https://image.openmoviedb.com/tmdb-images/original/i8W6iNNtMDPBRnfzwgXCNHpQCsz.png",
+        "previewUrl": "https://image.openmoviedb.com/tmdb-images/w500/i8W6iNNtMDPBRnfzwgXCNHpQCsz.png"
+      }
+    },
+    {
+      "id": 300,
+      "name": "Лиззи Магуайр",
+      "poster": {
+        "url": "https://image.openmoviedb.com/kinopoisk-images/4303601/a60e881c-c989-4a26-bbaf-c8323ffbf600/600x900",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/4303601/a60e881c-c989-4a26-bbaf-c8323ffbf600/300x450"
+      },
+      "genres": [
+        {
+          "name": "мелодрама"
+        },
+        {
+          "name": "комедия"
+        },
+        {
+          "name": "приключения"
+        },
+        {
+          "name": "семейный"
+        },
+        {
+          "name": "музыка"
+        }
+      ],
+      "enName": null,
+      "logo": {
+        "url": "https://avatars.mds.yandex.net/get-ott/1672343/2a00000177fccf7ff6db2d0668e206ea47df/orig"
+      }
+    },
+    {
+      "id": 301,
+      "name": "Матрица",
+      "poster": {
+        "url": "https://image.openmoviedb.com/kinopoisk-images/4774061/cf1970bc-3f08-4e0e-a095-2fb57c3aa7c6/600x900",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/4774061/cf1970bc-3f08-4e0e-a095-2fb57c3aa7c6/300x450"
+      },
+      "genres": [
+        {
+          "name": "фантастика"
+        },
+        {
+          "name": "боевик"
+        }
+      ],
+      "enName": null,
+      "logo": {
+        "url": "https://imagetmdb.com/t/p/original/a9ATitiXhAZU5FQeF63Nb19hYfQ.png"
+      }
+    },
+    {
+      "id": 302,
+      "name": "Клад",
+      "poster": {
+        "url": "https://image.openmoviedb.com/kinopoisk-images/1900788/9212f7c7-78b1-45ab-964d-f92cc84056ff/600x900",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1900788/9212f7c7-78b1-45ab-964d-f92cc84056ff/300x450"
+      },
+      "genres": [
+        {
+          "name": "драма"
+        },
+        {
+          "name": "комедия"
+        },
+        {
+          "name": "детектив"
+        },
+        {
+          "name": "приключения"
+        },
+        {
+          "name": "семейный"
+        }
+      ],
+      "enName": null,
+      "logo": {
+        "url": "https://image.openmoviedb.com/tmdb-images/original/lhnSimv0IrSyhO5geAQVNzHK5oz.png",
+        "previewUrl": "https://image.openmoviedb.com/tmdb-images/w500/lhnSimv0IrSyhO5geAQVNzHK5oz.png"
+      }
+    },
+    {
+      "id": 303,
+      "name": "Управление гневом",
+      "poster": {
+        "url": "https://image.openmoviedb.com/kinopoisk-images/1704946/872aff12-e80f-4c75-ac64-b139c46b78eb/600x900",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1704946/872aff12-e80f-4c75-ac64-b139c46b78eb/300x450"
+      },
+      "genres": [
+        {
+          "name": "мелодрама"
+        },
+        {
+          "name": "комедия"
+        }
+      ],
+      "enName": null,
+      "logo": {
+        "url": "https://avatars.mds.yandex.net/get-ott/1672343/2a00000171ad1b0cb0e5ff0bd870d497881c/orig"
+      }
+    },
+    {
+      "id": 304,
+      "name": "Афера",
+      "enName": null,
+      "poster": {
+        "url": "https://image.openmoviedb.com/kinopoisk-images/9784475/7329ddfa-afd1-429a-8f05-94dbf7f51779/600x900",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/9784475/7329ddfa-afd1-429a-8f05-94dbf7f51779/300x450"
+      },
+      "genres": [
+        {
+          "name": "триллер"
+        },
+        {
+          "name": "криминал"
+        }
+      ],
+      "logo": {
+        "url": "https://image.openmoviedb.com/tmdb-images/original/9Zzrfc2y6sQ0kd7rtITQXkTU2JX.png",
+        "previewUrl": "https://image.openmoviedb.com/tmdb-images/w500/9Zzrfc2y6sQ0kd7rtITQXkTU2JX.png"
+      }
+    },
+    {
+      "id": 305,
+      "name": "Телефонная будка",
+      "poster": {
+        "url": "https://image.openmoviedb.com/kinopoisk-images/1704946/576d69f2-63f6-4770-afb7-d11fd6778fe9/600x900",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1704946/576d69f2-63f6-4770-afb7-d11fd6778fe9/300x450"
+      },
+      "genres": [
+        {
+          "name": "триллер"
+        },
+        {
+          "name": "криминал"
+        }
+      ],
+      "enName": null,
+      "logo": {
+        "url": "https://image.openmoviedb.com/tmdb-images/original/pfZiXKWixoLbC1zvqMFc84qzYrC.png",
+        "previewUrl": "https://image.openmoviedb.com/tmdb-images/w500/pfZiXKWixoLbC1zvqMFc84qzYrC.png"
+      }
+    },
+    {
+      "id": 307,
+      "name": "Разыскиваются в Малибу",
+      "poster": {
+        "url": "https://image.openmoviedb.com/kinopoisk-images/1900788/f5f5630b-3439-4b08-9f12-be0cb714754d/600x900",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1900788/f5f5630b-3439-4b08-9f12-be0cb714754d/300x450"
+      },
+      "genres": [
+        {
+          "name": "комедия"
+        },
+        {
+          "name": "криминал"
+        }
+      ],
+      "enName": null,
+      "logo": {
+        "url": "https://imagetmdb.com/t/p/original/aTQBKPjGosU5BXcFsOXDlRoqog7.png"
+      }
+    }
+  ],
+  "total": 950009,
+  "limit": 10,
+  "page": 1,
+  "pages": 95001
+}

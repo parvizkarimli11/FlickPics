@@ -13,7 +13,7 @@ import com.example.flickipics.databinding.FragmentRecomendedBinding
 class RecomendedFragment : Fragment() {
 
     var binding: FragmentRecomendedBinding? = null
-    var recomendedAdapter: RecomendedAdapter? = null
+    var recomendedAdapter: RecommendedAdapter? = null
 
 
     override fun onCreateView(
@@ -26,8 +26,6 @@ class RecomendedFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
-
 
 
         val movieList = listOf(
@@ -56,21 +54,21 @@ class RecomendedFragment : Fragment() {
                 title = "The Greatest Showman",
                 genre = "Drama"
 
-            ),RecomendedDTO(
+            ), RecomendedDTO(
                 imageResId = R.drawable.movie,
                 title = "The Greatest Showman",
                 genre = "Drama"
 
-            ),RecomendedDTO(
+            ), RecomendedDTO(
                 imageResId = R.drawable.movie,
                 title = "The Greatest Showman",
                 genre = "Drama"
 
-            ),RecomendedDTO(
+            ), RecomendedDTO(
                 imageResId = R.drawable.movie,
                 title = "The Greatest Showman",
                 genre = "Drama"
-            ),RecomendedDTO(
+            ), RecomendedDTO(
                 imageResId = R.drawable.movie,
                 title = "The Greatest Showman",
                 genre = "Drama"
@@ -79,15 +77,16 @@ class RecomendedFragment : Fragment() {
 
         )
 
-        recomendedAdapter = RecomendedAdapter(movieList)
+        recomendedAdapter = RecommendedAdapter({
+
+        })
 
         binding?.recyclerView?.layoutManager = GridLayoutManager(
             requireContext(),
-             3
+            3
         )
         binding?.recyclerView?.adapter = recomendedAdapter
     }
 
 
-
-    }
+}

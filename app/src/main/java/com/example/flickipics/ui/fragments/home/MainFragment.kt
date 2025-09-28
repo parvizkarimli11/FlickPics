@@ -5,24 +5,24 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.flickipics.R
-import com.example.flickipics.data.api.NetworkUtil
-import com.example.flickipics.data.response.MovieListResponse
 import com.example.flickipics.databinding.FragmentMainBinding
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
-
+@AndroidEntryPoint
 class MainFragment : Fragment() {
 
-    var binding: FragmentMainBinding? = null
-    var recomendedAdapter: RecomendedAdapter? = null
-    var seeAllTextView: TextView? = null
-    var seaAllTextView1: TextView? = null
+    private var binding: FragmentMainBinding? = null
+    private var recommendedAdapter: RecommendedAdapter? = null
+    private var topSearchAdapter: TopSearchAdapter? = null
+    private val mainViewModel: MainViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -33,67 +33,69 @@ class MainFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
-        seeAllTextView = binding?.texViewSeaAll
-
-        seeAllTextView?.setOnClickListener {
-
-            findNavController().navigate(R.id.action_mainFragment_to_recomendedFragment)
-
-        }
-
-        seaAllTextView1 = binding?.textViewSeaAll1
-
-        seaAllTextView1?.setOnClickListener {
-            findNavController().navigate(R.id.action_mainFragment_to_topSearchFragment)
-        }
-
-        NetworkUtil.usersApi.fetchMovieList().enqueue(object : Callback<MovieListResponse> {
-            override fun onResponse(
-                call: Call<MovieListResponse?>, response: Response<MovieListResponse?>
-            ) {
-                if (response.isSuccessful) {
-                    response.body()?.let {
-                        handleResponse(it)
-                    }
-                }
-            }
-
-            override fun onFailure(
-                call: Call<MovieListResponse?>, t: Throwable
-            ) {
-
-            }
-
-        })
+        super.onViewCreated(view, savedInstanceState)
+        initRv()
+        initListeners()
+        fetchDatas()
     }
 
-    private fun handleResponse(body: MovieListResponse) {
-        val newMovieList = mutableListOf<RecomendedDTO>()
-        body.docs?.forEach { movie ->
-
-            val stringBuilder = StringBuilder()
-            movie.genres?.forEach {
-                stringBuilder.append(it.name).append(" ")
+    private fun initListeners() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                mainViewModel.movieRecommendedFlow.collect { movies ->
+                    handleRecommendedMovieResponse(movies)
+                }
             }
-
-            newMovieList.add(
-                RecomendedDTO(
-                    title = movie.name ?: "Test",
-                    genre = stringBuilder.toString(),
-                    imageResId = R.drawable.movie,
-                    imageUrl = movie.poster?.previewUrl
-                )
-            )
         }
 
-        recomendedAdapter = RecomendedAdapter(newMovieList)
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                mainViewModel.movieTopSearchFlow.collect { movies ->
+                    handleTopSearchMovieResponse(movies)
+                }
+            }
+        }
+
+        binding?.texViewSeaAll?.setOnClickListener {
+            findNavController().navigate(R.id.action_mainFragment_to_recomendedFragment)
+        }
+
+        binding?.textViewSeaAll1?.setOnClickListener {
+            findNavController().navigate(R.id.action_mainFragment_to_topSearchFragment)
+        }
+    }
+
+    private fun fetchDatas() {
+        mainViewModel.fetchRecommendedMovie()
+        mainViewModel.fetchTopSearchMovie()
+    }
+
+    private fun initRv() {
+        //recommended
+        recommendedAdapter = RecommendedAdapter({
+
+        })
         binding?.recyclerView?.layoutManager = LinearLayoutManager(
             requireContext(), LinearLayoutManager.HORIZONTAL, false
         )
-        binding?.recyclerView?.adapter = recomendedAdapter
+        binding?.recyclerView?.adapter = recommendedAdapter
 
+        //top search
+        topSearchAdapter = TopSearchAdapter({
 
+        })
+        binding?.rvTopSearch?.layoutManager = LinearLayoutManager(
+            requireContext(), LinearLayoutManager.VERTICAL, false
+        )
+        binding?.rvTopSearch?.adapter = topSearchAdapter
+    }
+
+    private fun handleRecommendedMovieResponse(items: List<RecomendedDTO>) {
+        recommendedAdapter?.submitList(items)
+    }
+
+    private fun handleTopSearchMovieResponse(items: List<TopSearchDTO>) {
+        topSearchAdapter?.submitList(items)
     }
 
 }

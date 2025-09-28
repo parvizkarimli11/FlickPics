@@ -40,7 +40,7 @@ class TopSearchFragment : Fragment() {
 
         )
 
-        val adapter = TopSearchAdapter(items)
+        val adapter = TopSearchAdapter()
         binding?.recyclerView?.layoutManager = LinearLayoutManager(requireContext())
         binding?.recyclerView?.adapter = adapter
 
