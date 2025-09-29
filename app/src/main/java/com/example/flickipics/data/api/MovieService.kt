@@ -15,7 +15,7 @@ interface MovieService {
 //    )
     @GET("movie")
     suspend fun fetchMovieList(
-        @Query("limit") limit: Int = 10,
+        @Query("limit") limit: Int = 5,
         @Query("page") page: Int = 1,
         @Query("notNullFields") notNullFields: String = "id",
         @Query("sortField") sortField: String = "id",
