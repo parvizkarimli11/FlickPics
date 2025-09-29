@@ -20,7 +20,7 @@
 
     <fragment
         android:id="@+id/recomendedFragment"
-        android:name="com.example.flickipics.ui.fragments.home.RecomendedFragment"
+        android:name="com.example.flickipics.ui.fragments.home.RecommendedFragment"
         android:label="fragment_recomended"
         tools:layout="@layout/fragment_recomended" />
 
