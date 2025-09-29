@@ -1,0 +1,28 @@
+{
+  "docs": [
+    {
+      "id": 307,
+      "name": "Разыскиваются в Малибу",
+      "poster": {
+        "url": "https://image.openmoviedb.com/kinopoisk-images/1900788/f5f5630b-3439-4b08-9f12-be0cb714754d/600x900",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1900788/f5f5630b-3439-4b08-9f12-be0cb714754d/300x450"
+      },
+      "genres": [
+        {
+          "name": "комедия"
+        },
+        {
+          "name": "криминал"
+        }
+      ],
+      "enName": null,
+      "logo": {
+        "url": "https://imagetmdb.com/t/p/original/aTQBKPjGosU5BXcFsOXDlRoqog7.png"
+      }
+    }
+  ],
+  "total": 950009,
+  "limit": 10,
+  "page": 1,
+  "pages": 95001
+}

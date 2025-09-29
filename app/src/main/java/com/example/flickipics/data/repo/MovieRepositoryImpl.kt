@@ -53,7 +53,7 @@ class MovieRepositoryImpl @Inject constructor(
 
     override suspend fun fetchTopSearchMovieList(): List<TopSearchDTO> = withContext(io) {
         try {
-            val json = context.assets.open("movielist.json")
+            val json = context.assets.open("top_search_movielist.json")
                 .bufferedReader()
                 .use { it.readText() }
             val adapter = moshi.adapter(MovieListResponse::class.java)
