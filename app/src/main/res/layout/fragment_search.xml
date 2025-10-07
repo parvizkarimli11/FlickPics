@@ -7,14 +7,35 @@
     android:layout_margin="8dp"
     tools:context=".ui.fragments.search.SearchFragment">
 
+   <com.google.android.material.textfield.TextInputLayout
+       android:id="@+id/searchLayout"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:boxCornerRadiusTopEnd="15dp"
+       app:boxCornerRadiusBottomStart="15dp"
+       app:boxCornerRadiusBottomEnd="15dp"
+       app:boxCornerRadiusTopStart="15dp"
+       android:hint="@string/search"
+
+       >
+      <com.google.android.material.textfield.TextInputEditText
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+
+          />
+   </com.google.android.material.textfield.TextInputLayout>
 
    <androidx.recyclerview.widget.RecyclerView
        android:id="@+id/recyclerView"
        android:layout_width="0dp"
        android:layout_height="0dp"
        android:padding="8dp"
+       android:layout_marginTop="15dp"
        app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintTop_toBottomOf="@id/searchLayout"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintBottom_toBottomOf="parent"
        />

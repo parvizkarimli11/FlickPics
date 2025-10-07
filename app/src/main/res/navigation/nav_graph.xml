@@ -51,5 +51,11 @@
         android:label="fragment_details_movie"
         tools:layout="@layout/fragment_details_movie" />
 
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.flickipics.ui.fragments.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+
 
 </navigation>

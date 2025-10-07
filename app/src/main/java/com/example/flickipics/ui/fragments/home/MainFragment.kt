@@ -81,9 +81,7 @@ class MainFragment : Fragment() {
         binding?.recyclerView?.adapter = recommendedAdapter
 
         //top search
-        topSearchAdapter = TopSearchAdapter({
-
-        })
+        topSearchAdapter = TopSearchAdapter({})
         binding?.rvTopSearch?.layoutManager = LinearLayoutManager(
             requireContext(), LinearLayoutManager.VERTICAL, false
         )
