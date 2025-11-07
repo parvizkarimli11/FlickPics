@@ -7,6 +7,7 @@ import com.example.flickipics.data.response.MovieListResponse
 import com.example.flickipics.di.IoDispatcher
 import com.example.flickipics.ui.fragments.home.RecomendedDTO
 import com.example.flickipics.ui.fragments.home.TopSearchDTO
+import com.example.flickipics.ui.fragments.search.SearchDTO
 import com.squareup.moshi.Moshi
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineDispatcher
@@ -78,6 +79,11 @@ class MovieRepositoryImpl @Inject constructor(
             emptyList()
         }
     }
+
+    override suspend fun fetchSearchMovieList(): List<SearchDTO> {
+        TODO("Not yet implemented")
+    }
+
 
     private fun handleRecommendedResponse(body: MovieListResponse): List<RecomendedDTO> {
         val newMovieList = mutableListOf<RecomendedDTO>()
