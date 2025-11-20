@@ -38,6 +38,7 @@ class RecommendedFragment : Fragment() {
         initListeners()
         initRv()
         mainViewModel.fetchRecommendedMovie()
+        
     }
 
     private fun initRv() {

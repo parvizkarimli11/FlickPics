@@ -13,7 +13,6 @@ class TopSearchAdapter(private val onClick: (TopSearchDTO) -> Unit = {}) :
 
     class Diff : DiffUtil.ItemCallback<TopSearchDTO>() {
         override fun areItemsTheSame(oldItem: TopSearchDTO, newItem: TopSearchDTO): Boolean {
-            // If you have a stable unique ID, use it here instead.
             return oldItem.title == newItem.title && oldItem.imageUrl == newItem.imageUrl
         }
 
@@ -26,17 +25,20 @@ class TopSearchAdapter(private val onClick: (TopSearchDTO) -> Unit = {}) :
         RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TopSearchViewHolder {
-        var binding =
+        val binding =
             ItemTopSearchBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return TopSearchViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: TopSearchViewHolder, position: Int) {
         val item = getItem(position)
+        holder.binding.textViewMovieTitle.text = item.title
+        holder.binding.textViewMovieGenre.text = item.genre
+
         item.imageUrl?.let { imageUrl ->
             Picasso.get().load(imageUrl).into(holder.binding.imageViewMovie)
         }
-        holder.binding.textViewMovieTitle.text = item.title
-        holder.binding.textViewMovieGenre.text = item.genre
+
+        holder.binding.root.setOnClickListener { onClick.invoke(item) }
     }
 }

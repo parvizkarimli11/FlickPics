@@ -4,6 +4,6 @@ data class SearchDTO(
 
     var imageResId:Int,
     var title: String,
-    var genre:String
-
+    var genre:String,
+    var imageUrl: String? = null
 )

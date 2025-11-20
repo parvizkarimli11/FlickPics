@@ -41,8 +41,9 @@ class SearchFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        initRv()
         initListeners()
-        binding?.recyclerView?.layoutManager = GridLayoutManager(requireContext(), 3)
+        searchViewModel.fetchAllData()
 
         val editText = binding?.searchLayout?.editText ?: return
         editText.setOnEditorActionListener { v, actionId, _ ->
@@ -52,23 +53,35 @@ class SearchFragment : Fragment() {
                 true
             } else false
         }
+    }
 
-        searchViewModel.fetchAllData()
+    private fun initRv() {
+        searchAdapter = SearchAdapter({})
+        binding?.recyclerView?.layoutManager = GridLayoutManager(requireContext(), 3)
+        binding?.recyclerView?.adapter = searchAdapter
     }
 
     private fun initListeners() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 searchViewModel.searchFlow.collect { movies ->
-                    searchAdapter = SearchAdapter(movies)
-                    binding?.recyclerView?.adapter = searchAdapter
+                    handleSearchMovieResponse(movies)
                 }
             }
         }
     }
 
+    private fun handleSearchMovieResponse(items: List<SearchDTO>) {
+        searchAdapter?.submitList(items)
+    }
+
     private fun performSearch(query: String) {
         searchViewModel.searchData(query)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
     }
 
 }

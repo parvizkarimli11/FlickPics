@@ -5,46 +5,61 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.flickipics.R
 import com.example.flickipics.databinding.FragmentTopSearchBinding
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
-
+@AndroidEntryPoint
 class TopSearchFragment : Fragment() {
 
-    var binding:FragmentTopSearchBinding?= null
-    var topSearchAdapter:TopSearchAdapter?=null
+    private var binding: FragmentTopSearchBinding? = null
+    private var topSearchAdapter: TopSearchAdapter? = null
+    private val mainViewModel: MainViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding= FragmentTopSearchBinding.inflate(inflater,container,false)
+        binding = FragmentTopSearchBinding.inflate(inflater, container, false)
         return binding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        var items= listOf(
-            TopSearchDTO("Bridgerton", "Drama", R.drawable.movie1),
-            TopSearchDTO("Bridgerton", "Drama", R.drawable.movie1),
-            TopSearchDTO("Bridgerton", "Drama", R.drawable.movie1),
-            TopSearchDTO("Bridgerton", "Drama", R.drawable.movie1),
-            TopSearchDTO("Bridgerton", "Drama", R.drawable.movie1),
-            TopSearchDTO("Bridgerton", "Drama", R.drawable.movie1),
-            TopSearchDTO("Bridgerton", "Drama", R.drawable.movie1),
-            TopSearchDTO("Bridgerton", "Drama", R.drawable.movie1),
-            TopSearchDTO("Bridgerton", "Drama", R.drawable.movie1),
-            TopSearchDTO("Bridgerton", "Drama", R.drawable.movie1),
-            TopSearchDTO("Bridgerton", "Drama", R.drawable.movie1),
+        initRv()
+        initListeners()
+        mainViewModel.fetchTopSearchMovie()
+    }
 
-        )
-
-        val adapter = TopSearchAdapter()
+    private fun initRv() {
+        topSearchAdapter = TopSearchAdapter({})
         binding?.recyclerView?.layoutManager = LinearLayoutManager(requireContext())
-        binding?.recyclerView?.adapter = adapter
-
+        binding?.recyclerView?.adapter = topSearchAdapter
     }
 
-
+    private fun initListeners() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                mainViewModel.movieTopSearchFlow.collect { movies ->
+                    handleTopSearchMovieResponse(movies)
+                }
+            }
+        }
     }
+
+    private fun handleTopSearchMovieResponse(items: List<TopSearchDTO>) {
+        topSearchAdapter?.submitList(items)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
+    }
+
+}
