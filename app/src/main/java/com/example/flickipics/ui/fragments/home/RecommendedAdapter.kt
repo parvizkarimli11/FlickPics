@@ -8,16 +8,16 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.flickipics.databinding.ItemRecomendedBinding
 import com.squareup.picasso.Picasso
 
-class RecommendedAdapter(private val onClick: (RecomendedDTO) -> Unit = {}) :
-    ListAdapter<RecomendedDTO, RecommendedAdapter.RecommendedViewHolder>(Diff()) {
+class RecommendedAdapter(private val onClick: (RecommendedDTO) -> Unit = {}) :
+    ListAdapter<RecommendedDTO, RecommendedAdapter.RecommendedViewHolder>(Diff()) {
 
-    class Diff : DiffUtil.ItemCallback<RecomendedDTO>() {
-        override fun areItemsTheSame(oldItem: RecomendedDTO, newItem: RecomendedDTO): Boolean {
+    class Diff : DiffUtil.ItemCallback<RecommendedDTO>() {
+        override fun areItemsTheSame(oldItem: RecommendedDTO, newItem: RecommendedDTO): Boolean {
             // If you have a stable unique ID, use it here instead.
             return oldItem.title == newItem.title && oldItem.imageUrl == newItem.imageUrl
         }
 
-        override fun areContentsTheSame(oldItem: RecomendedDTO, newItem: RecomendedDTO): Boolean {
+        override fun areContentsTheSame(oldItem: RecommendedDTO, newItem: RecommendedDTO): Boolean {
             return oldItem == newItem
         }
     }

@@ -17,7 +17,7 @@ moshi = "1.15.2"
 okhttp = "5.1.0"
 ksp = "2.2.20-2.0.3"
 hilt = "2.57.2"
-lifecycle = "2.8.6"
+lifecycle = "2.10.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }

@@ -9,9 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.flickipics.R
 import com.example.flickipics.databinding.FragmentRecomendedBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -63,7 +61,7 @@ class RecommendedFragment : Fragment() {
         }
     }
 
-    private fun handleRecommendedMovieResponse(items: List<RecomendedDTO>) {
+    private fun handleRecommendedMovieResponse(items: List<RecommendedDTO>) {
         recommendedAdapter?.submitList(items)
     }
 

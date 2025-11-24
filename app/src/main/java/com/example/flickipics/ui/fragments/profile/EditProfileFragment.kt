@@ -12,14 +12,14 @@ import com.example.flickipics.databinding.FragmentEditProfileBinding
 
 class EditProfileFragment : Fragment() {
 
-     var binding:FragmentEditProfileBinding?=null
+    private var binding: FragmentEditProfileBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding= FragmentEditProfileBinding.inflate(inflater,container,false)
+        binding = FragmentEditProfileBinding.inflate(inflater, container, false)
         return binding?.root
     }
 
@@ -27,9 +27,7 @@ class EditProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding?.arrowBackImageView?.setOnClickListener {
-
             findNavController().popBackStack()
-
         }
     }
 

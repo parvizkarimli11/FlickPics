@@ -1,6 +1,6 @@
 package com.example.flickipics.ui.fragments.home
 
-data class RecomendedDTO(
+data class RecommendedDTO(
     var title: String,
     var imageResId: Int? = null,
     var genre: String? = null,

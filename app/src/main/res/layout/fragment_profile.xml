@@ -1,124 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.profile.ProfileFragment">
 
     <ImageView
         android:id="@+id/arrowBackImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="20dp"
         android:src="@drawable/arrow_left"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_margin="20dp"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <TextView
-        android:layout_width="0dp"
         android:id="@+id/settingTextView"
         style="@style/BoldText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="center"
         android:text="Settings"
         android:textSize="14sp"
-        android:gravity="center"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/arrowBackImageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_margin="20dp"
-        />
+        app:layout_constraintStart_toEndOf="@id/arrowBackImageView"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:id="@+id/view_above"
         android:layout_width="0dp"
         android:layout_height="1dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/settingTextView"
-        android:background="#000000"
         android:layout_marginBottom="12dp"
-        />
+        android:background="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settingTextView" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textViewProfile"
+        style="@style/BoldText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Edit Profile"
-        android:textSize="16sp"
+        android:layout_margin="16dp"
         android:drawableStart="@drawable/account_circle_24dp"
         android:drawableEnd="@drawable/arrow_forward"
         android:drawablePadding="16dp"
-       style="@style/BoldText"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="Edit Profile"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/view_above"
-        android:layout_margin="16dp"
-    />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_above" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textViewPassword"
+        style="@style/BoldText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Change Password"
-        android:textSize="16sp"
+        android:layout_margin="16dp"
         android:drawableStart="@drawable/lock_24dp"
         android:drawableEnd="@drawable/arrow_forward"
         android:drawablePadding="16dp"
-        style="@style/BoldText"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="Change Password"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewProfile"
-        android:layout_margin="16dp"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewProfile" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textViewNotifaction"
+        style="@style/BoldText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Notifaction"
-        android:textSize="16sp"
+        android:layout_margin="16dp"
         android:drawableStart="@drawable/notifications_24dp"
         android:drawableEnd="@drawable/arrow_forward"
         android:drawablePadding="16dp"
-        style="@style/BoldText"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="Dark Mode"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewPassword"
-        android:layout_margin="16dp"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewPassword" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textViewLanguage"
+        style="@style/BoldText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Language"
-        android:textSize="16sp"
+        android:layout_margin="16dp"
         android:drawableStart="@drawable/language_24dp"
         android:drawableEnd="@drawable/arrow_forward"
         android:drawablePadding="16dp"
-        style="@style/BoldText"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="Language"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewNotifaction"
-        android:layout_margin="16dp"
-        />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewNotifaction" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

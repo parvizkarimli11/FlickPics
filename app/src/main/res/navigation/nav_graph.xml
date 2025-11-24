@@ -89,9 +89,9 @@
         tools:layout="@layout/fragment_language" />
     <fragment
         android:id="@+id/notifactionFragment"
-        android:name="com.example.flickipics.ui.fragments.profile.NotifactionFragment"
+        android:name="com.example.flickipics.ui.fragments.profile.NotificationFragment"
         android:label="fragment_notifaction"
-        tools:layout="@layout/fragment_notifaction" />
+        tools:layout="@layout/fragment_dark_mode" />
     <fragment
         android:id="@+id/changePasswordFragment"
         android:name="com.example.flickipics.ui.fragments.profile.ChangePasswordFragment"

@@ -5,7 +5,7 @@ import com.example.flickipics.R
 import com.example.flickipics.data.api.MovieService
 import com.example.flickipics.data.response.MovieListResponse
 import com.example.flickipics.di.IoDispatcher
-import com.example.flickipics.ui.fragments.home.RecomendedDTO
+import com.example.flickipics.ui.fragments.home.RecommendedDTO
 import com.example.flickipics.ui.fragments.home.TopSearchDTO
 import com.example.flickipics.ui.fragments.search.SearchDTO
 import com.squareup.moshi.Moshi
@@ -24,23 +24,15 @@ class MovieRepositoryImpl @Inject constructor(
     private val moshi: Moshi
 ) : MovieRepository {
 
-    override suspend fun fetchRecommendedMovieList(): List<RecomendedDTO> = withContext(io) {
+    override suspend fun fetchRecommendedMovieList(): List<RecommendedDTO> = withContext(io) {
         try {
-            val json = context.assets.open("movielist.json")
-                .bufferedReader()
-                .use { it.readText() }
-            val adapter = moshi.adapter(MovieListResponse::class.java)
-            val res = adapter.fromJson(json) ?: MovieListResponse(emptyList())
-            handleRecommendedResponse(res)
-
-//            val resp = movieService.fetchMovieList()
-//            if (resp.isSuccessful) {
-//                val body = resp.body() ?: return@withContext emptyList()
-//                handleResponse(body)
-//            } else {
-//                // log resp.errorBody() if needed
-//                emptyList()
-//            }
+            val resp = movieService.fetchMovieList()
+            if (resp.isSuccessful) {
+                val body = resp.body() ?: return@withContext emptyList()
+                handleRecommendedResponse(body)
+            } else {
+                emptyList()
+            }
         } catch (e: HttpException) {
             e.printStackTrace()
             // log e
@@ -54,21 +46,13 @@ class MovieRepositoryImpl @Inject constructor(
 
     override suspend fun fetchTopSearchMovieList(): List<TopSearchDTO> = withContext(io) {
         try {
-            val json = context.assets.open("top_search_movielist.json")
-                .bufferedReader()
-                .use { it.readText() }
-            val adapter = moshi.adapter(MovieListResponse::class.java)
-            val res = adapter.fromJson(json) ?: MovieListResponse(emptyList())
-            handleTopSearchResponse(res)
-
-//            val resp = movieService.fetchMovieList()
-//            if (resp.isSuccessful) {
-//                val body = resp.body() ?: return@withContext emptyList()
-//                handleResponse(body)
-//            } else {
-//                // log resp.errorBody() if needed
-//                emptyList()
-//            }
+            val resp = movieService.fetchMovieList()
+            if (resp.isSuccessful) {
+                val body = resp.body() ?: return@withContext emptyList()
+                handleTopSearchResponse(body)
+            } else {
+                emptyList()
+            }
         } catch (e: HttpException) {
             e.printStackTrace()
             // log e
@@ -85,8 +69,8 @@ class MovieRepositoryImpl @Inject constructor(
     }
 
 
-    private fun handleRecommendedResponse(body: MovieListResponse): List<RecomendedDTO> {
-        val newMovieList = mutableListOf<RecomendedDTO>()
+    private fun handleRecommendedResponse(body: MovieListResponse): List<RecommendedDTO> {
+        val newMovieList = mutableListOf<RecommendedDTO>()
         body.docs?.forEach { movie ->
 
             val stringBuilder = StringBuilder()
@@ -95,7 +79,7 @@ class MovieRepositoryImpl @Inject constructor(
             }
 
             newMovieList.add(
-                RecomendedDTO(
+                RecommendedDTO(
                     title = movie.name ?: "Test",
                     genre = stringBuilder.toString(),
                     imageResId = R.drawable.movie,

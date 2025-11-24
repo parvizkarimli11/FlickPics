@@ -15,8 +15,8 @@ class MainViewModel @Inject constructor(
     private val movieRepository: MovieRepository
 ) : ViewModel() {
 
-    private val _movieRecommendedFlow = MutableStateFlow(mutableListOf<RecomendedDTO>())
-    val movieRecommendedFlow: StateFlow<List<RecomendedDTO>> = _movieRecommendedFlow.asStateFlow()
+    private val _movieRecommendedFlow = MutableStateFlow(mutableListOf<RecommendedDTO>())
+    val movieRecommendedFlow: StateFlow<List<RecommendedDTO>> = _movieRecommendedFlow.asStateFlow()
 
     private val _movieTopSearchFlow = MutableStateFlow(mutableListOf<TopSearchDTO>())
     val movieTopSearchFlow: StateFlow<List<TopSearchDTO>> = _movieTopSearchFlow.asStateFlow()

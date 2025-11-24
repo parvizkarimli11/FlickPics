@@ -72,7 +72,5 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    val lifecycle_version = "2.9.4"
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
 
 }

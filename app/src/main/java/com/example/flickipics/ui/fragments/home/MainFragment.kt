@@ -27,7 +27,6 @@ class MainFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-
         binding = FragmentMainBinding.inflate(inflater, container, false)
         return binding?.root
     }
@@ -88,7 +87,7 @@ class MainFragment : Fragment() {
         binding?.rvTopSearch?.adapter = topSearchAdapter
     }
 
-    private fun handleRecommendedMovieResponse(items: List<RecomendedDTO>) {
+    private fun handleRecommendedMovieResponse(items: List<RecommendedDTO>) {
         recommendedAdapter?.submitList(items)
     }
 
