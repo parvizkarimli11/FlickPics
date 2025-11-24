@@ -12,6 +12,8 @@ import com.example.flickipics.databinding.FragmentNotifactionBinding
 import com.google.android.material.switchmaterial.SwitchMaterial
 import androidx.appcompat.widget.SwitchCompat
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.navigation.fragment.findNavController
+import com.example.flickipics.ThemeManager
 
 
 class NotifactionFragment : Fragment() {
@@ -29,6 +31,15 @@ class NotifactionFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding?.switchNotification?.setOnCheckedChangeListener { _, isChecked ->
+            ThemeManager.setDarkMode(requireContext(), isChecked)
+        }
+
+        binding?.arrowBackImageView?.setOnClickListener {
+
+            findNavController().popBackStack()
+        }
 
        }
     }

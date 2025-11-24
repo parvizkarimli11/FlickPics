@@ -95,7 +95,7 @@
         android:id="@+id/textViewTurkish"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Turkiye"
+        android:text="Turkish"
         android:textSize="16sp"
         android:padding="12dp"
         android:background="@drawable/language_selector_bg"

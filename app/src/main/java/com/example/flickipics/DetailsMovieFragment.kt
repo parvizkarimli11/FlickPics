@@ -1,11 +1,10 @@
-package com.example.flickipics.ui.fragments.search
+package com.example.flickipics
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.flickipics.R
 
 
 class DetailsMovieFragment : Fragment() {
