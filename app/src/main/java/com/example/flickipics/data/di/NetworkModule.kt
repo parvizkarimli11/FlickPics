@@ -1,4 +1,4 @@
-package com.example.flickipics.di
+package com.example.flickipics.data.di
 
 import com.example.flickipics.data.api.MovieService
 import com.squareup.moshi.Moshi

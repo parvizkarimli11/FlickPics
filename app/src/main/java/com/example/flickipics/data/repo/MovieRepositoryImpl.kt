@@ -4,7 +4,7 @@ import android.content.Context
 import com.example.flickipics.R
 import com.example.flickipics.data.api.MovieService
 import com.example.flickipics.data.response.MovieListResponse
-import com.example.flickipics.di.IoDispatcher
+import com.example.flickipics.data.di.IoDispatcher
 import com.example.flickipics.ui.fragments.home.RecommendedDTO
 import com.example.flickipics.ui.fragments.home.TopSearchDTO
 import com.example.flickipics.ui.fragments.search.SearchDTO
