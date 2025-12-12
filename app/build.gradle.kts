@@ -56,12 +56,12 @@ dependencies {
     implementation (libs.material.v1130)
 
     implementation(libs.retrofit)
-    implementation(libs.retrofit.moshi)
     implementation(libs.okhttp)
     implementation(libs.okhttp.logging)
-    ksp(libs.moshi.ksp)
-    implementation(libs.moshi)
     implementation(libs.picasso)
+
+    implementation(libs.gson)
+    implementation(libs.retrofit.gson)
 
     implementation(libs.hilt)
     ksp(libs.hilt.compiler)

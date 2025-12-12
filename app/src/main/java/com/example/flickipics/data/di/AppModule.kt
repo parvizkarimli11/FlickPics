@@ -4,7 +4,6 @@ import android.content.Context
 import com.example.flickipics.data.api.MovieService
 import com.example.flickipics.data.repo.MovieRepository
 import com.example.flickipics.data.repo.MovieRepositoryImpl
-import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,9 +21,8 @@ object AppModule {
     fun provideMovieRepository(
         api: MovieService,
         @IoDispatcher io: CoroutineDispatcher,
-        moshi: Moshi,
         @ApplicationContext context: Context
     ): MovieRepository =
-        MovieRepositoryImpl(api, io, context, moshi)
+        MovieRepositoryImpl(api, io, context)
 
 }

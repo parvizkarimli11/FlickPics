@@ -1,7 +1,8 @@
 package com.example.flickipics.data.di
 
 import com.example.flickipics.data.api.MovieService
-import com.squareup.moshi.Moshi
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -12,7 +13,7 @@ import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
-import retrofit2.converter.moshi.MoshiConverterFactory
+import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
@@ -28,9 +29,7 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideMoshi(): Moshi =
-        Moshi.Builder()
-            .build()
+    fun provideGson(): Gson = GsonBuilder().create()
 
     @Provides
     @Singleton
@@ -67,12 +66,12 @@ object NetworkModule {
     fun provideRetrofit(
         @BaseUrl baseUrl: String,
         okHttpClient: OkHttpClient,
-        moshi: Moshi
+        gson: Gson
     ): Retrofit =
         Retrofit.Builder()
             .baseUrl(baseUrl)
             .client(okHttpClient)
-            .addConverterFactory(MoshiConverterFactory.create(moshi))
+            .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
 
     @Provides

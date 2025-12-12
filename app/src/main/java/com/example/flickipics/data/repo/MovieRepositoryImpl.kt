@@ -8,7 +8,6 @@ import com.example.flickipics.data.di.IoDispatcher
 import com.example.flickipics.ui.fragments.home.RecommendedDTO
 import com.example.flickipics.ui.fragments.home.TopSearchDTO
 import com.example.flickipics.ui.fragments.search.SearchDTO
-import com.squareup.moshi.Moshi
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
@@ -20,8 +19,7 @@ import javax.inject.Singleton
 class MovieRepositoryImpl @Inject constructor(
     private val movieService: MovieService,
     @IoDispatcher private val io: CoroutineDispatcher,
-    @ApplicationContext private val context: Context,
-    private val moshi: Moshi
+    @ApplicationContext private val context: Context
 ) : MovieRepository {
 
     override suspend fun fetchRecommendedMovieList(): List<RecommendedDTO> = withContext(io) {
