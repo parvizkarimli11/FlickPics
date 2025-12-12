@@ -1,30 +1,25 @@
- package com.example.flickipics.data.response
+package com.example.flickipics.data.response
 
-import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
+import com.google.gson.annotations.SerializedName
 
-@JsonClass(generateAdapter = true)
 data class MovieListResponse(
-    @Json(name = "docs") val docs: List<MovieResponse>? = null
+    @SerializedName("docs") val docs: List<MovieResponse>? = null
 )
 
-@JsonClass(generateAdapter = true)
 data class MovieResponse(
-    @Json(name = "id") val id: Int? = null,
-    @Json(name = "name") val name: String? = null,
-    @Json(name = "poster") val poster: MoviePosterResponse? = null,
-    @Json(name = "genres") val genres: List<MovieGenresResponse>? = null
+    @SerializedName("id") val id: Int? = null,
+    @SerializedName("name") val name: String? = null,
+    @SerializedName("poster") val poster: MoviePosterResponse? = null,
+    @SerializedName("genres") val genres: List<MovieGenresResponse>? = null
 )
 
-@JsonClass(generateAdapter = true)
 data class MoviePosterResponse(
-    @Json(name = "url") val url: String? = null,
-    @Json(name = "previewUrl") val previewUrl: String? = null
+    @SerializedName("url") val url: String? = null,
+    @SerializedName("previewUrl") val previewUrl: String? = null
 )
 
-@JsonClass(generateAdapter = true)
 data class MovieGenresResponse(
-    @Json(name = "name") val name: String? = null
+    @SerializedName("name") val name: String? = null
 )
 
 
